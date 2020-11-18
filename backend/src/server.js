@@ -27,6 +27,7 @@ const studentRoutes = require("./students/studentRoutes");
 
 // define first route
 app.get("/", (req, res) => {
+    res.send('PORTAL DE ALUNOS')
     console.log("Hello MEAN Soldier...Ready For Battle??");
 });
 app.listen(PORT, () => {

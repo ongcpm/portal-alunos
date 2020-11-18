@@ -1,0 +1,21 @@
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+
+    .page-header {
+        width: 100%;
+        height: 350px;
+        background: #212529;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        left: 0px;
+        padding: 50px;
+        color: white;
+
+        h1 {
+            text-transform: capitalize;
+        }
+    }
+}

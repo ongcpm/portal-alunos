@@ -1,0 +1,32 @@
+
+	<div class="main">
+		<div class="container">
+			<div class="middle">
+				<div id="login">
+
+          <form class="form-signin" [formGroup]="loginForm" (submit)="loginUser()">
+            <fieldset class="clearfix">
+              <p><span class="fa fa-user"></span><input type="text" name="email" class="form-control" formControlName="email" required /></p>
+              <p><span class="fa fa-lock"></span><input type="password" name="password" class="form-control" formControlName="password" required /></p>
+							
+							<div>
+                <button class="btn btn-block btn-primary mb-3" type="submit" [disabled]="!loginForm.valid">Login</button>
+								<span style="width: 100%; text-align:center; display: inline-block;">
+                  <a class="small-text" href="#">Forgot password?</a>
+                </span>
+              </div>
+
+            </fieldset>
+            <div class="clearfix"></div>
+          </form>
+          <div class="clearfix"></div>
+
+        </div> <!-- end login -->
+
+				<div class="logo">
+          <img class="ml-4" src="../../../assets/images/cpm-logo.png" alt="" width="414" height="214">
+          <div class="clearfix"></div>
+        </div>
+			</div>
+		</div>
+	</div>

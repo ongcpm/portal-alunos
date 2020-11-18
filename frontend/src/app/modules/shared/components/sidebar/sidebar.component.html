@@ -1,0 +1,15 @@
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand text-center mb-2">
+            <img src="../../assets/images/cpm-logo2.png" width="100" alt="" class="mt-2">
+        </li>
+        <li *ngFor="let menuItem of menuItems">
+            <a [routerLink]="menuItem.path">
+                <span>{{menuItem.title}}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" href="#">LOGOUT</a>
+        </li>
+    </ul>
+</div>

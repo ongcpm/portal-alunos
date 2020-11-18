@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col mb-4">
+        <input class="form-control form-control-lg" type="text" placeholder="Search student by name" [(ngModel)]="userenter"/>
+        <a routerLink="/admin/accounts/create" class="mt-2 btn btn-primary"><i class="fas fa-plus"></i> Add Voluntary</a>
+      </div>
+    </div>
+  
+    <div class="card">  
+      <div class="card p-4">
+        <table class="table">
+          <thead class="thead-purple">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Mobile Number</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- | filterlist:userenter -->
+            <tr *ngFor="let user of users | filterlist:userenter; let idx = index">
+              <td>{{user.email}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.email}}</td>
+              <td>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" [overlapTrigger]="false">  
+                  <button mat-menu-item (click)="openModal(student)">
+                    <mat-icon>visibility</mat-icon>
+                    <span>View</span>
+                  </button>
+                  <button mat-menu-item (click)="openEdit(student)">
+                    <mat-icon>create</mat-icon>
+                    <span>Edit</span>
+                  </button>
+                  <button mat-menu-item (click)="openDelete(student)">
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete</span>
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+  

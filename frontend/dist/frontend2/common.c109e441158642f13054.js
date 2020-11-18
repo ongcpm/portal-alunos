@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{ace1:function(e,n,r){"use strict";r.d(n,"a",(function(){return o}));var t=r("fXoL");let o=(()=>{class e{transform(e,n){return n?e.filter(e=>e.fullName.toLowerCase().indexOf(n.toLowerCase())>-1):e}}return e.\u0275fac=function(n){return new(n||e)},e.\u0275pipe=t.Kb({name:"filterlist",type:e,pure:!0}),e})()}}]);

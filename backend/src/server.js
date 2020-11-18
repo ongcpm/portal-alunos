@@ -21,7 +21,7 @@ app.use(morgan("dev")); // configire morgan
 
 const userRoutes = require("./account/userRoutes"); //bring in our user routes
 const studentRoutes = require("./students/studentRoutes");
-// app.use("/user", userRoutes);
+app.use("/user", userRoutes);
 // app.use("/students", studentRoutes);
 
 

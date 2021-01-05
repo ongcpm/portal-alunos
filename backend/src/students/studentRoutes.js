@@ -5,7 +5,7 @@ const auth = require("../middleware/auth")
 
 router.get("/", auth, studentController.findAll)
 router.get("/:id", auth, studentController.findOne)
-router.post("/", auth, studentController.create)
+router.post("/register", auth, studentController.create)
 router.get("/:id", auth, studentController.delete)
 router.patch("/:id", auth, studentController.update)
 

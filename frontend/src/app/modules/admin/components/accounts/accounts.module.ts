@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -15,7 +16,8 @@ import { CreateComponent } from './create/create.component';
   ],
   declarations: [
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ]
 })
 export class AccountsModule { }

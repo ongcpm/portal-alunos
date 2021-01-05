@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AccountsComponent } from './accounts.component';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
     {
@@ -12,6 +13,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'list', pathMatch: 'full' },
             { path: 'list', component: ListComponent },
             { path: 'create', component: CreateComponent },
+            { path: 'edit/:id', component: EditComponent },
         ]
     },
 

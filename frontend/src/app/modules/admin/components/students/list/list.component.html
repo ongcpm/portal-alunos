@@ -13,10 +13,10 @@
             <table class="table">
                 <thead class="thead-purple">
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Type</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Full Name</th>
                         <th scope="col">Email Address</th>
+                        <th scope="col">Social Name</th>
                         <th scope="col">Mobile Number</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -24,28 +24,28 @@
                 <tbody>
                     <!-- | filterlist:userenter -->
                     <tr *ngFor="let student of students | filterlist:userenter; let idx = index">
-                        <th scope="row">{{student._id}}</th>
-                        <td>{{student.studentType}}</td>
-                        <td>{{student.fullName}}</td>
-                        <td>{{student.email}}</td>
-                        <td>{{student.cellphoneNumber}}</td>
+                        <th>{{student.basicInfo.registrationType}}</th>
+                        <td scope="row">{{student.basicInfo.fullName}}</td>
+                        <td>{{student.contactInfo.email}}</td>
+                        <td>{{student.basicInfo.socialName}}</td>
+                        <td>{{student.contactInfo.cellphoneNumber}}</td>
                         <td>
                             <button mat-icon-button [matMenuTriggerFor]="menu">
                                 <mat-icon>menu</mat-icon>
                             </button>
                             <mat-menu #menu="matMenu" [overlapTrigger]="false">
-                                <button mat-menu-item (click)="openModal(student)">
+                                <button mat-menu-item (click)="viewStudent(student)">
                                     <mat-icon>visibility</mat-icon>
                                     <span>View</span>
                                 </button>
-                                <button mat-menu-item (click)="openEdit(student)">
+                                <!-- <button mat-menu-item (click)="openEdit(student)">
                                     <mat-icon>create</mat-icon>
                                     <span>Edit</span>
                                 </button>
                                 <button mat-menu-item (click)="openDelete(student)">
                                     <mat-icon>delete</mat-icon>
                                     <span>Delete</span>
-                                </button>
+                                </button> -->
                             </mat-menu>
                         </td>
                     </tr>

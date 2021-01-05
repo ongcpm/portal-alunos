@@ -18,6 +18,10 @@ export class StudentService {
         catchError(this.handleError))
   }
 
+  createStudent(student) {
+    return this.http.post(`${environment.baseURL}students/register`, student);
+  }
+
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';

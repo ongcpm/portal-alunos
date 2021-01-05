@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: AdminComponent, 
     children: [
       { path: 'dashboard', canActivate: [ AuthGuard ], component: DashboardComponent },
-      { path: 'accounts', canActivate: [ AuthGuard ],  loadChildren: () => import(`./components/accounts/accounts.module`).then(m => m.AccountsModule)},
+      { path: 'accounts',   loadChildren: () => import(`./components/accounts/accounts.module`).then(m => m.AccountsModule)},
       { path: 'students', canActivate: [ AuthGuard ],  loadChildren: () => import(`./components/students/students.module`).then(m => m.StudentsModule)},
     ]  
   },

@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class CreateComponent implements OnInit {
   
   constructor(private User: UserService, private router: Router, private snackBar: MatSnackBar) { }
-    signupForm = new FormGroup({
+    addForm = new FormGroup({
       email: new FormControl(''),
       phone_number: new FormControl(''),
       name: new FormControl(''),
@@ -24,12 +24,13 @@ export class CreateComponent implements OnInit {
     }
   
     createUser() {
-      this.User.createNewUser(this.signupForm.value).subscribe(
-        (data: any) => {
+      this.User.createNewUser(this.addForm.value).subscribe(
+        (data: {msg}) => {
           this.snackBar.open(data.msg, 'Fechar', {
             duration: 3500,
             panelClass: ['dark-snackbar']
           });
+          this.router.navigate(['accounts/list']);
 
         },
         (err: HttpErrorResponse) => {

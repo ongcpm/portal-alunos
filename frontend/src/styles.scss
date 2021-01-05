@@ -22,3 +22,36 @@ body {
   background: #dc3545;
   color: white;
 }
+
+
+.bg-white {
+  background-color: white;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+
+#view-dialog {
+  header {
+      background: #e4e4e4;
+      padding: 15px 24px 15px 24px;
+      h2 { margin: 0; }
+  }
+
+  section {
+      padding: 24px;
+  }
+  h3 { 
+      font-size: 1.4rem;
+      border-bottom: 3px solid #3E4095;
+      display: inline-block;
+  }
+  
+  div {
+      small {
+          color: #3E4095;
+      }
+  }
+}

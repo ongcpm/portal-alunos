@@ -7,6 +7,9 @@ import { FilterListPipe } from './filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 
+import { ViewComponent } from './components/dialogs/view/view.component';
+import { UserViewDialogComponent } from './components/dialogs/user-view-dialog/user-view-dialog.component';
+
 
 @NgModule({
   imports: [
@@ -17,13 +20,17 @@ import { MaterialModule } from './material.module';
     MaterialModule
   ],
   declarations: [
-    SidebarComponent, 
+    SidebarComponent,
     PageHeaderComponent,
+    ViewComponent,
+    UserViewDialogComponent,
     FilterListPipe
   ],
   exports: [
     SidebarComponent,
     PageHeaderComponent,
+    ViewComponent,
+    UserViewDialogComponent,
     FilterListPipe,
     FormsModule,
     ReactiveFormsModule,

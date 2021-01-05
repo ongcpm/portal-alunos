@@ -1,0 +1,150 @@
+<div id="view-dialog" *ngFor="let student of students">
+	<header>
+		<h2>{{student.student.basicInfo.fullName}}</h2>
+	</header>
+	<section>
+		<div class="row">
+			<div class="col-xl-12">
+				<h3>Basic Information</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>Full Name</small>
+				<p>{{student.student.basicInfo.fullName}}</p> 
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Social Name</small>
+				<p>{{student.student.basicInfo.socialName}}</p>
+			</div>
+
+			<div class="col-xl-6 d-flex flex-column">
+				<small>Birth Date</small>
+				<p>{{student.student.basicInfo.birthDate}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Registration Type</small>
+				<p>{{student.student.basicInfo.registrationType}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12">
+				<h3>Documentation</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>RG</small>
+				<p>{{student.student.docsInfo.docRg}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>CPF</small>
+				<p>{{student.student.docsInfo.docCpf}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12">
+				<h3>Contact Information</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>Email</small>
+				<p>{{student.student.contactInfo.email}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Mobile Number</small>
+				<p>{{student.student.contactInfo.cellphoneNumber}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Email CPM</small>
+				<p>{{student.student.contactInfo.emailCpm}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Phone Number</small>
+				<p>{{student.student.contactInfo.phoneNumber}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row" mt-4>
+			<div class="col-xl-12">
+				<h3>Address Information</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>CEP</small>
+				<p>{{student.student.addressInfo.cepNumber}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Neighborhood</small>
+				<p>{{student.student.addressInfo.neighborhood}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>CIty</small>
+				<p>{{student.student.addressInfo.city}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12">
+				<h3>Responsible Information</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>Email</small>
+				<p>{{student.student.responsibleInfo.responsibleEmail}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Mobile Number</small>
+				<p>{{student.student.responsibleInfo.responsibleCellphoneNumber}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Full Name</small>
+				<p>{{student.student.responsibleInfo.responsibleFullName}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12">
+				<h3>School Information</h3>
+			</div>
+			<div class="col-xl-6 d-flex flex-column">
+				<small>Current Scholl</small>
+				<p>{{student.student.schoolInfo.currentSchool}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Current Scholl Type</small>
+				<p>{{student.student.schoolInfo.currentSchoolType}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Fundamental School</small>
+				<p>{{student.student.schoolInfo.fundamentalSchool}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Fundamental School Type</small>
+				<p>{{student.student.schoolInfo.fundamentalSchoolType}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>High School</small>
+				<p>{{student.student.schoolInfo.highSchool}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>High School Type</small>
+				<p>{{student.student.schoolInfo.highSchoolType}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12 d-flex justify-content-end">
+				<button mat-stroked-button color="primary" (click)="closeDialog()">Close</button>
+			</div>
+		</div>
+		
+	</section>
+</div>

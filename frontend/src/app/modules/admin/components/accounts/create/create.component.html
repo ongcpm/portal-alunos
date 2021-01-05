@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col mb-4">
 			<div class="card">
-				<form id="create" [formGroup]="signupForm" (ngSubmit)="createUser()">
+				<form id="create" [formGroup]="addForm" (ngSubmit)="createUser()">
 					<div class="form-group">
 						<label>Name</label>
 						<input class="form-control" formControlName="name" matInput>
@@ -18,10 +18,12 @@
 						<input class="form-control" formControlName="phone_number" matInput>
 					</div>
 					<br>
+
 					<div class="form-group">
 						<label>Password</label>
-						<input class="form-control" type="password" formControlName="password" matInput>
+						<input class="form-control" formControlName="password" matInput>
 					</div>
+
 					<br>
 					<button type="submit" mat-raised-button color="primary">Submit</button>
 				</form>

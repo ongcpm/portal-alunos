@@ -1,1 +1,250 @@
-<p>create works!</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xl-12">
+
+			<div class="card">
+				<div class="row">
+					<div class="col-xl-12">
+
+						<form id="createForm" [formGroup]="createStudentForm" (ngSubmit)="createUser()">
+							<div class="row">
+								<div class="col-xl-12 mb-4">
+									<h3>Register Type</h3>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Select Type here</mat-label>
+										<mat-select formControlName="registrationType" (selectionChange)="changeType($event.value)">
+											<mat-option value="registration">Registration</mat-option>
+											<mat-option value="reenroll">Reenroll</mat-option>
+										</mat-select>
+										<mat-hint >Campo Obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12 mb-4">
+									<h3>Basic Information</h3>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Full Name</mat-label>
+										<input placeholder="Full Name" formControlName="fullName" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-12 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Email</mat-label>
+										<input formControlName="email" placeholder="Email" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Social Name</mat-label>
+										<input formControlName="socialName" placeholder="Social Name" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Birth Date</mat-label>
+										<input formControlName="birthDate" placeholder="Birth Date" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<div class="row mt-4 mb-4">
+								<div class="col-xl-12 ">
+									<h3>Documentation</h3>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>RG</mat-label>
+										<input placeholder="RG" formControlName="docRg" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>CPF</mat-label>
+										<input placeholder="CPF" formControlName="docCpf" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<div class="row mt-4 mb-4">
+								<div class="col-xl-12">
+									<h3>Contacts</h3>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Mobile Number</mat-label>
+										<input placeholder="Mobile Number" formControlName="cellphoneNumber" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Phone Number</mat-label>
+										<input placeholder="Phone Number" formControlName="phoneNumber" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-xl-12 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Email CPM</mat-label>
+										<input placeholder="Email CPM" formControlName="emailCpm" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<div class="row mt-4 mb-4">
+								<div class="col-xl-12">
+									<h3>Address</h3>
+								</div>
+								<div class="col-xl-4 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>CEP Number</mat-label>
+										<input name="cepNumber" placeholder="CEP Number" formControlName="cepNumber" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-xl-4 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Neighborhood</mat-label>
+										<input name="neighborhood" placeholder="Neighborhood" formControlName="neighborhood" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-4 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>City</mat-label>
+										<input name="city" placeholder="City" formControlName="city" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<div class="row mt-4 mb-4">
+								<div class="col-xl-12">
+									<h3>Responsible</h3>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Full Name</mat-label>
+										<input placeholder="Full Name" formControlName="responsibleFullName" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Mobile Number</mat-label>
+										<input placeholder="Mobile Number" formControlName="responsibleCellphoneNumber" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-12 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Email Address</mat-label>
+										<input placeholder="Email Address" formControlName="responsibleEmail" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+
+
+
+							<div class="row mt-4 mb-4">
+								<div class="col-xl-12">
+									<h3>School Information</h3>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Fundamental School Name</mat-label>
+										<input placeholder="School Name" formControlName="fundamentalSchool" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Fundamental School Type</mat-label>
+										<input placeholder="School Type" formControlName="fundamentalSchoolType" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>High School Name</mat-label>
+										<input placeholder="High School Name" formControlName="highSchool" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>High School Type</mat-label>
+										<input placeholder="High School Type" formControlName="highSchoolType" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Current School Name</mat-label>
+										<input placeholder="Current School Name" formControlName="currentSchool" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+
+								<div class="col-xl-6 mb-4">
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Current School Type</mat-label>
+										<input placeholder="Current School Type" formControlName="currentSchoolType" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xl-12">
+									<button type="submit" mat-raised-button color="primary">Submit</button>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

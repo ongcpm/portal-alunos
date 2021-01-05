@@ -5,7 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
     imports: [
@@ -13,7 +17,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatButtonModule,
         MatMenuModule,
         MatIconModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatListModule,
+        MatIconModule,
+        MatSelectModule
+        
     ],
 
     declarations: [ ],
@@ -22,7 +33,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatButtonModule,
         MatMenuModule,
         MatIconModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatListModule,
+        MatIconModule,
+        MatSelectModule
     ]
 })
 

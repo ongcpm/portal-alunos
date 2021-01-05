@@ -1,0 +1,29 @@
+<div id="view-dialog">
+	<header>
+		<h2>{{user.user.name}}</h2>
+	</header>
+	<section>
+		<div class="row">
+			<div class="col-xl-6 flex-column">
+				<small>Email</small>
+				<p>{{user.user.email}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Name</small>
+				<p>{{user.user.name}}</p>
+			</div>
+			<div class="col-xl-6 flex-column">
+				<small>Mobile Number</small>
+				<p>{{user.user.phone_number}}</p>
+			</div>
+		</div>
+
+		<mat-divider></mat-divider>
+
+		<div class="row mt-4">
+			<div class="col-xl-12 d-flex justify-content-end">
+				<button mat-stroked-button color="primary" (click)="closeDialog()">Close</button>
+			</div>
+		</div>
+	</section>
+</div>

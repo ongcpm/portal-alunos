@@ -11,9 +11,6 @@ import { ViewComponent } from 'src/app/modules/shared/components/dialogs/view/vi
 export class ListComponent implements OnInit {
   public students = [];
   public student;
-  public errorMessage: string;
-  public closeResult: string;
-  public searchText;
   public userenter;
 
   constructor(private studentsService: StudentService, private dialog: MatDialog) { }

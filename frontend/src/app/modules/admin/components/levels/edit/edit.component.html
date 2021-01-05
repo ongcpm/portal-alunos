@@ -1,0 +1,12 @@
+<div class="col-md-6 container bg-white" id="edit-form">
+	<h2 class="text-center">Edit User</h2>
+	<form id="edit" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+		<mat-form-field class="w-100" appearance="outline">
+            <mat-label>Level Name</mat-label>
+            <input placeholder="Level Name" formControlName="levelName" matInput>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Campo obrigatório</mat-hint>
+        </mat-form-field>
+		<button type="submit" mat-raised-button color="primary">Submit</button>
+	</form>
+</div> 

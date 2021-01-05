@@ -10,6 +10,7 @@ import { HttpConfigInterceptor } from 'src/app/interceptor/httpconfig.intercepto
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentsComponent } from './components/students/students.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
+import { LevelsComponent } from './components/levels/levels.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     DashboardComponent,
     StudentsComponent,
     AccountsComponent,
+    LevelsComponent,
   ],
   exports: [
     FormsModule,

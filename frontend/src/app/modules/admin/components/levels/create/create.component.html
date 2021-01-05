@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xl-12">
+			<div class="card">
+				<div class="row">
+					<div class="col-xl-12">
+						<form id="createForm" [formGroup]="createLevelForm" (ngSubmit)="createLevel()">
+							<div class="row">
+								<div class="col-xl-12 mb-4">
+									<h3>Create Level</h3>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label>Level Name</mat-label>
+										<input placeholder="Level Name" formControlName="levelName" matInput>
+										<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+										<mat-hint>Campo obrigatório</mat-hint>
+									</mat-form-field>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12">
+									<button type="submit" mat-raised-button color="primary">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

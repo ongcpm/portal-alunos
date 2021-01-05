@@ -21,8 +21,11 @@ app.use(morgan("dev")); // configire morgan
 
 const userRoutes = require("./account/userRoutes"); //bring in our user routes
 const studentRoutes = require("./students/studentRoutes");
+const levelRoutes = require("./levels/levelRoutes");
+
 app.use("/user", userRoutes);
 app.use("/students", studentRoutes);
+app.use("/levels", levelRoutes);
 
 
 // define first route

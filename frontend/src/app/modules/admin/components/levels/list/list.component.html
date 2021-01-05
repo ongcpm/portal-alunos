@@ -1,0 +1,48 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col mb-4">
+			<input class="form-control form-control-lg" type="text" placeholder="Search student by name">
+			<a routerLink="/admin/levels/create" class="mt-2 btn btn-primary"><i class="fas fa-plus"></i> Add
+				Level</a>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card p-4">
+			<table class="table">
+				<thead class="thead-purple">
+					<tr>
+						<th scope="col">Level Name</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- | filterlist:userenter -->
+					<tr *ngFor="let level of levels">
+						<td>{{level.levelInfo.levelName}}</td>
+						<td>
+							<button mat-icon-button [matMenuTriggerFor]="menu">
+								<mat-icon>menu</mat-icon>
+							</button>
+							<mat-menu #menu="matMenu" [overlapTrigger]="false">
+								<button mat-menu-item (click)="editLevel(level)">
+									<mat-icon>edit</mat-icon>
+									<span>Edit</span>
+								</button>
+								<button mat-menu-item (click)="viewLevel(level)">
+									<mat-icon>visibility</mat-icon>
+									<span>View Teachers</span>
+								</button>
+
+								<button mat-menu-item (click)="delete(level._id)">
+									<mat-icon>delete</mat-icon>
+									<span>Delete</span>
+								</button>
+							</mat-menu>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

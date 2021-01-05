@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
       { title: 'Home', path: '/admin/dashboard' },
       { title: 'Accounts', path: '/admin/accounts/list', icon: '' },
       { title: 'Students', path: '/admin/students/list', icon: '' },
+      { title: 'Levels', path: '/admin/levels/list', icon: '' },
       // { title: 'Records', path: '/admin/records/create', icon: '' }
     ]
   }

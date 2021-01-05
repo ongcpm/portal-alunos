@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL:'http://localhost:4000/'
+  baseURL:'https://cpm-bras-backend-swagkpa5da-rj.a.run.app/'
 };
 
 /*

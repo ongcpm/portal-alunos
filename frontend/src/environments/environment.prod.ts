@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL:'https://api-dot-new-project-264520.appspot.com/'
+  baseURL:'https://cpm-bras-backend-swagkpa5da-rj.a.run.app/'
 };

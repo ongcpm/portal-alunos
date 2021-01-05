@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-app.use(express.static('dist/frontend'));
+app.use(express.static('dist/frontend2'));
 app.get('/', function (req, res,next) {
     res.redirect('/');
 });

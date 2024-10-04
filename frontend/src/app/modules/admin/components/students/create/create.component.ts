@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { StudentService } from 'src/app/services/student/student.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { StudentService } from 'src/app/services/student/student.service';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  createStudentForm: FormGroup;
+  createStudentForm: UntypedFormGroup;
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private studentService: StudentService) {
 
     this.createStudentForm = this.fb.group({

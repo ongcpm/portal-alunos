@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
@@ -21,10 +21,10 @@ export class EditComponent implements OnInit {
     private snackBar: MatSnackBar) {
   }
 
-  editForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone_number: new FormControl(''),
+  editForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    email: new UntypedFormControl(''),
+    phone_number: new UntypedFormControl(''),
   });
 
 

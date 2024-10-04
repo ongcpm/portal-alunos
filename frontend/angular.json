@@ -130,7 +130,6 @@
       }
     }
   },
-  "defaultProject": "frontend2",
   "cli": {
     "analytics": false
   }

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Form, UntypedFormBuilder, FormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Level } from 'src/app/models/level';
@@ -14,12 +14,12 @@ import { LevelService } from 'src/app/services/level/level.service';
 export class EditComponent implements OnInit {
   level: Level;
   levelId;
-  editForm: FormGroup;
+  editForm: UntypedFormGroup;
 
   constructor(
     private router: Router,
     private levelService: LevelService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private snackBar: MatSnackBar
   ) {
 

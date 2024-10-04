@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 
@@ -12,9 +12,9 @@ import { UserService } from '../../services/user/user.service';
 export class LoginComponent implements OnInit {
   constructor(private User: UserService, private router: Router) { }
 
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
+  loginForm = new UntypedFormGroup({
+    email: new UntypedFormControl(''),
+    password: new UntypedFormControl('')
   });
 
   loginUser() {

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LevelService } from 'src/app/services/level/level.service';
@@ -11,9 +11,9 @@ import { LevelService } from 'src/app/services/level/level.service';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  createLevelForm: FormGroup;
+  createLevelForm: UntypedFormGroup;
 
-  constructor(private levelService: LevelService, public fb: FormBuilder, private router: Router, private snackBar: MatSnackBar) {
+  constructor(private levelService: LevelService, public fb: UntypedFormBuilder, private router: Router, private snackBar: MatSnackBar) {
     this.createLevelForm = this.fb.group({
       levelName: [''],
       status: {

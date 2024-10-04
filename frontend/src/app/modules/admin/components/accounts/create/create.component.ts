@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user/user.service';
@@ -13,11 +13,11 @@ import { UserService } from 'src/app/services/user/user.service';
 export class CreateComponent implements OnInit {
   
   constructor(private User: UserService, private router: Router, private snackBar: MatSnackBar) { }
-    addForm = new FormGroup({
-      email: new FormControl(''),
-      phone_number: new FormControl(''),
-      name: new FormControl(''),
-      password: new FormControl('')
+    addForm = new UntypedFormGroup({
+      email: new UntypedFormControl(''),
+      phone_number: new UntypedFormControl(''),
+      name: new UntypedFormControl(''),
+      password: new UntypedFormControl('')
     });
 
     ngOnInit(): void {

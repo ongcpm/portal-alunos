@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 module.exports = function (app) {
-    mongoose.connect("mongodb+srv://god:CL1q2w3eCL@cpmong.swoss.mongodb.net/db_backoffice?retryWrites=true&w=majority", {
+    mongoose.connect("", {
         useUnifiedTopology: true,
         useNewUrlParser: true,
         useFindAndModify: false

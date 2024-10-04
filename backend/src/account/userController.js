@@ -7,8 +7,11 @@ exports.registerNewUser = async (req, res) => {
 			phone_number: req.body.phone_number,
 			email: req.body.email
 		})
+
 		user.password = await user.hashPassword(req.body.password);
+
 		let createdUser = await user.save();
+
 		res.status(200).json({
 			msg: "YEAH! User created!",
 			data: createdUser
@@ -22,41 +25,37 @@ exports.registerNewUser = async (req, res) => {
 }
 
 exports.loginUser = async (req, res) => {
-	const login = {
+	let userCredentials = {
 		email: req.body.email,
-		password: req.body.password
+    password: req.body.password
 	}
+	
 	try {
-		let user = await User.findOne({
-			email: login.email
-		});
-		//check if user exit
+		const user = await User.findOne({ email: req.body.email });
+		// Verifique se o usuário existe
 		if (!user) {
-			res.status(400).json({
-				type: "Not Found",
-				msg: "Wrong Login Details"
+			return res.status(404).json({ message: 'Usuário não encontrado' });
+		}
+
+		// Se o usuário existir, compare a senha
+		const isPasswordValid = await user.compareUserPassword(req.body.password);
+
+		if (!isPasswordValid) {
+			return res.status(401).json({ message: 'Senha inválida' });
+		}
+
+		// Retornar o sucesso ou token aqui
+		let token = await user.generateJwtToken({ user }, "secret", {
+			expiresIn: 604800
+		})
+		if (token) {
+			res.status(200).json({
+				success: true,
+				token: token,
+				userCredentials: user
 			})
 		}
-		let match = await user.compareUserPassword(login.password, user.password);
-		if (match) {
-			let token = await user.generateJwtToken({
-				user
-			}, "secret", {
-				expiresIn: 604800
-			})
-			if (token) {
-				res.status(200).json({
-					success: true,
-					token: token,
-					userCredentials: user
-				})
-			}
-		} else {
-			res.status(400).json({
-				type: "Not Found",
-				msg: "Wrong Login Details"
-			})
-		}
+
 	} catch (err) {
 		console.log(err)
 		res.status(500).json({
@@ -99,9 +98,9 @@ exports.updateUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
 	try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error });
-  }
+		const user = await User.findByIdAndDelete(req.params.id);
+		res.json(user);
+	} catch (error) {
+		res.status(500).json({ error });
+	}
 }
